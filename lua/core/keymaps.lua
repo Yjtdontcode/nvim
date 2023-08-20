@@ -25,6 +25,16 @@ keymap.set("n", "<leader>so", "<cmd>so<CR>") -- 重启文件
 -- 光标移动
 keymap.set("n", "<leader>hh", "^")
 keymap.set("n", "<leader>ll", "$")
+-- 分屏选择
+keymap.set("n", "<A-h>", "<C-w>h")
+keymap.set("n", "<A-j>", "<C-w>j")
+keymap.set("n", "<A-k>", "<C-w>k")
+keymap.set("n", "<A-l>", "<C-w>l")
+-- 分屏调整
+keymap.set("n", "<A-,>", "<C-w>>")
+keymap.set("n", "<A-.>", "<C-w><")
+keymap.set("n", "<A-->", "<C-w>-")
+keymap.set("n", "<A-=>", "<C-w>+")
 -- 插件更新
 keymap.set("n", "<leader>pks", "<cmd>PackerSync<CR>")
 
