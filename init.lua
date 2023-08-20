@@ -5,4 +5,12 @@ require("core.keymaps")
 
 require("plugins.lualine")
 require("plugins.nvim-tree")
---require("plugins.dashboard")
+require("plugins.treesitter")
+require("plugins.comment")
+require("plugins.autopairs")
+require("plugins.bufferline")
+require("plugins.gitsigns")
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.telescope")
+
