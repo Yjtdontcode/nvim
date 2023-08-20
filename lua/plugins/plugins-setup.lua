@@ -60,7 +60,30 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    use "p00f/nvim-ts-rainbow" -- 括号颜色不同
 
+    use "numToStr/Comment.nvim" -- gcc和gc注释
+    use "windwp/nvim-autopairs" -- 自动补全括号
+    use "akinsho/bufferline.nvim" -- bufferline缓冲区
+    use "lewis6991/gitsigns.nvim" -- 左侧git提示
+
+    use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",  -- 这个相当于mason.nvim和lspconfig的桥梁
+    "neovim/nvim-lspconfig"
+  }
+    -- 自动补全
+  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
+  use "saadparwaiz1/cmp_luasnip"
+  use "rafamadriz/friendly-snippets"
+  use "hrsh7th/cmp-path" -- 文件路径
+
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',  -- 文件检索
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
