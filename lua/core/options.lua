@@ -33,3 +33,6 @@ opt.smartcase = true
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
+--im.cmd("colorscheme kanagawa-lotus") -- wave, dragon, lotus
+vim.o.background = "light" -- or "light" for light mode
+vim.cmd([[colorscheme gruvbox]])

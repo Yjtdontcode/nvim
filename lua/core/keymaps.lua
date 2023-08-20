@@ -25,6 +25,8 @@ keymap.set("n", "<leader>so", "<cmd>so<CR>") -- 重启文件
 -- 光标移动
 keymap.set("n", "<leader>hh", "^")
 keymap.set("n", "<leader>ll", "$")
+-- 插件更新
+keymap.set("n", "<leader>pks", "<cmd>PackerSync<CR>")
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
