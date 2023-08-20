@@ -25,25 +25,27 @@ return require('packer').startup(function(use)
   use "rebelot/kanagawa.nvim" -- colorscheme
   use { "ellisonleao/gruvbox.nvim" } -- colorscheme
 
-    use { -- 初始界面
-        'glepnir/dashboard-nvim',
-        event = 'VimEnter',
-        config = function()
-        require('dashboard').setup {
+    -- use { -- 初始界面
+    --     'glepnir/dashboard-nvim',
+        -- event = 'VimEnter',
+        -- config = function()
+        -- require('dashboard').setup {
             -- config
 --            config = {
 --                header = 
---                 ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
---                 ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
---                 ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
---                 ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
---                 ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
---                 ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 --            }
-        }
-        end,
-        requires = {'nvim-tree/nvim-web-devicons'}
-    }
+        -- }
+        -- end,
+    --     requires = {'nvim-tree/nvim-web-devicons'}
+    -- }
+    use {
+  'glepnir/dashboard-nvim',
+   event = 'VimEnter',
+  config = function()
+    require('dashboard')
+  end,
+  requires = {'nvim-tree/nvim-web-devicons'}
+}
 
   use {
       'nvim-lualine/lualine.nvim',
