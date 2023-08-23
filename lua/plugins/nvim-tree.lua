@@ -1,13 +1,3 @@
--- require("nvim-tree").setup()
---[[{
-    filters = {
-        custom = {
-            "^.git$"
-        }
-    }
-}--]]
--- 快捷打开nvim-tree
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -16,7 +6,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+-- require("nvim-tree").setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
@@ -30,7 +20,8 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true, -- 不显示隐藏文件
     exclude = { -- 选择显示哪些文件
-            ".gitignore"
+            ".gitignore",
+            -- ".git",
         },
   },
 })

@@ -30,9 +30,12 @@ opt.splitbelow = true
 opt.ignorecase = true
 opt.smartcase = true
 
+-- 取消自动注释，当前行是注释时，按下回车键会默认添加一行注释，这里取消这一行为
+vim.opt_local.formatoptions = vim.opt_local.formatoptions - {"r", "c", "o"}
+
 -- 外观
 opt.termguicolors = true
 opt.signcolumn = "yes"
 --vim.cmd("colorscheme kanagawa-lotus") -- wave, dragon, lotus
-vim.o.background = "dark" -- or "light" for light mode
+vim.o.background = "light" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])

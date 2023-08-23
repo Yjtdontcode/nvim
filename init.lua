@@ -14,4 +14,10 @@ require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.telescope")
 require("plugins.dashboard")
+require("plugins.hlchunk")
+-- require("plugins.shade") -- 变暗焦点窗口之外的窗口
+-- require("plugins.indent-blankline")
 
+-- require("run.cpp")
+
+-- require("lsp.cpp")
