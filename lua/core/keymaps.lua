@@ -1,9 +1,4 @@
-vim.g.mapleader = " "
-
-local keymap = vim.keymap
-
-keymap.set("", "<M+e>", "<ESC>")
-
+vim.g.mapleader = " " local keymap = vim.keymap keymap.set("", "<M+e>", "<ESC>")
 -- ---------- 插入模式 ---------- ---
 keymap.set("i", "jk", "<ESC>")
 keymap.set("i", "kj", "<ESC>")
@@ -19,15 +14,6 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- 垂直复制窗口
 keymap.set("n", "<leader>sh", "<C-w>s") -- 水平复制窗口
 keymap.set("n", "<leader>sc", "<C-w>c") -- 关闭窗口
 keymap.set("n", "<M-t>", "<C-w>s<cmd>term<CR>") -- 水平新增终端
---打开终端后自动进入插入模式
-local term_mode = vim.api.nvim_create_augroup("TERM_MODE", {clear = true})
-vim.api.nvim_create_autocmd({"TermOpen"}, {
-    pattern = "*",
-    group = term_mode,
-    command = [[normal i]]
-})
--- 从终端模式变为普通模式
-keymap.set("t", "<M-t>", "<C-\\><C-n>:bd!<CR>",{silent = true})
 -- 文件操作
 keymap.set("n", "ww", "<cmd>w<CR>") -- 写入文件
 keymap.set("n", "qq", "<cmd>q<CR>") -- 退出文件
@@ -52,9 +38,31 @@ keymap.set("n", "<leader>pks", "<cmd>PackerSync<CR>")
 -- 代码格式化（自动调整缩进）
 keymap.set("n", "<leader>=", "ggVG=")
 -- 光标向下移动
-keymap.set("n", "J", "<C-d>")
-keymap.set("n", "K", "<C-u>")
+-- keymap.set("n", "J", "<C-d>")
+-- keymap.set("n", "K", "<C-u>")
 
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+--打开终端后自动进入插入模式
+local term_mode = vim.api.nvim_create_augroup("TERM_MODE", {clear = true})
+vim.api.nvim_create_autocmd({"TermOpen"}, {
+    pattern = "*",
+    group = term_mode,
+    command = [[normal i]]
+})
+-- 从终端模式变为普通模式
+
+keymap.set("t", "<M-t>", "<C-\\><C-n>:bd!<CR>",{silent = true})
+-- plugin of 'runcode'
+vim.keymap.set('n', '<leader>rr', ':RunCode<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rft', ':RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+-- vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+
+-- keymap of 'lspconfig' --------------------------
+-- keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+-- keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
