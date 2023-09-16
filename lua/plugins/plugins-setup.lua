@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use "rebelot/kanagawa.nvim"        -- colorscheme
     use { "ellisonleao/gruvbox.nvim" } -- colorscheme
 
-    use {                              -- nvim 初始界面
+    use {                              -- nvim start page
         'glepnir/dashboard-nvim',
         -- event = 'VimEnter',
         config = function()
@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
     }
     use
     {
-        'nvim-lualine/lualine.nvim', -- 下面的状态栏
+        'nvim-lualine/lualine.nvim', -- make status line more fancy
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
     use {
@@ -46,13 +46,13 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'nvim-treesitter/nvim-treesitter', -- 语法高亮
+        'nvim-treesitter/nvim-treesitter', -- 语法高亮 highlight syntax
         run = ':TSUpdate'
     }
     use "p00f/nvim-ts-rainbow"    -- 括号颜色不同
 
-    use "numToStr/Comment.nvim"   -- gcc和gc注释
-    use "windwp/nvim-autopairs"   -- 自动补全括号
+    use "numToStr/Comment.nvim"   -- use 'gcc' or 'gc' to comment
+    use "windwp/nvim-autopairs"   -- auto complement of bracket
     use "akinsho/bufferline.nvim" -- bufferline缓冲区
     use "lewis6991/gitsigns.nvim" -- 左侧git提示
 
@@ -65,7 +65,7 @@ return require('packer').startup(function(use)
         "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
         "neovim/nvim-lspconfig"
     }
-    -- 自动补全
+    -- auto complement
     use "hrsh7th/nvim-cmp"    -- 提供代码补全选项
     use "hrsh7th/cmp-path"    -- 文件路径
     use "hrsh7th/cmp-buffer"  -- 缓冲区文件
@@ -78,38 +78,40 @@ return require('packer').startup(function(use)
     use "rafamadriz/friendly-snippets"
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1', -- 文件检索
+        'nvim-telescope/telescope.nvim', tag = '0.1.1', -- file finder
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     -- use "lukas-reineke/indent-blankline.nvim" -- 高亮代码片段，缩进显示线(下面这个更好用)
     use { "shellRaining/hlchunk.nvim" }
 
+    -- ------------------- 模糊焦点窗口之外的窗口 -----------------------------
     use 'sunjon/shade.nvim'
 
-    use { 'michaelb/sniprun', run = 'sh ./install.sh' }
-
-    -- ------------------- 运行 ---------------------------
-    use 'CRAG666/code_runner.nvim'
+    use 'CRAG666/code_runner.nvim' -- code runner
 
     -- ------------------- cursorline --------------------------
     use 'yamatsum/nvim-cursorline'
 
-    -- ------------------ smoothcursor ------------------------
-    -- use { 'gen740/SmoothCursor.nvim',
-    --     config = function()
-    --         require('smoothcursor').setup()
-    --     end
-    -- }
-
-    -- ----------------- im-select(自动切换英文输入法) ------------------------
-    use {
-        "keaising/im-select.nvim",
+    use { 'gen740/SmoothCursor.nvim', -- make the curosr move more smoothly
         config = function()
-            require("im_select").setup({})
-        end,
+            require('smoothcursor').setup()
+        end
     }
 
+    use 'ethanholz/nvim-lastplace' -- auto return back to the last modified place
+
+    use 'rcarriga/nvim-notify' -- make the notify appear top
+
+    use"Kicamon/im-switch.nvim" -- auto switch imputting method to en when exiting 'INSERT' mode
+
+    use 'zaldih/themery.nvim' -- use '<leader>cs' to switch theme rapidly and conveniently BUT it's effort is temporary
+
+    -- ------------------ debug adapator -----------------------
+    -- use "ravenxrz/DAPInsatll.nvim" -- help us install several debuggers
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use "theHamsta/nvim-dap-virtual-text"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

@@ -2,6 +2,7 @@ require("plugins.plugins-setup")
 
 require("core.options")
 require("core.keymaps")
+-- require("core.formatter")
 
 require("plugins.lualine")
 require("plugins.nvim-tree")
@@ -12,11 +13,19 @@ require("plugins.bufferline")
 require("plugins.gitsigns")
 require("plugins.lsp")
 require("plugins.cmp")
+require("plugins.dap")
 require("plugins.telescope")
 require("plugins.dashboard")
 require("plugins.hlchunk")
 require("plugins.runcode")
 require("plugins.cursorline")
+require("plugins.themery")
+require("plugins.smoothcursor")
+require("plugins.im-switch")
+require("plugins.lastplace")
+-- require("plugins.notify")
+
+-- require("plugins.formatter")
 -- require("plugins.shade") -- 变暗焦点窗口之外的窗口
 -- require("plugins.indent-blankline")
 

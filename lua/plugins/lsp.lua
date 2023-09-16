@@ -14,10 +14,11 @@ require("mason").setup({
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 require("lspconfig").lua_ls.setup {
-    capabilities = capabilities,
+    -- capabilities = capabilities,
 }
 
 require 'lspconfig'.clangd.setup {}
+
 -- local lspconfig = require('lspconfig')
 -- lspconfig.pyright.setup {}
 -- lspconfig.tsserver.setup {}
