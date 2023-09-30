@@ -2,7 +2,6 @@ require("plugins.plugins-setup")
 
 require("core.options")
 require("core.keymaps")
--- require("core.formatter")
 
 require("plugins.lualine")
 require("plugins.nvim-tree")
@@ -23,11 +22,8 @@ require("plugins.themery")
 require("plugins.smoothcursor")
 require("plugins.im-switch")
 require("plugins.lastplace")
--- require("plugins.notify")
+require("plugins.foldbracket")
+require("plugins.accelerated-jk")
+require("plugins.lsp-signature")
 
--- require("plugins.formatter")
 -- require("plugins.shade") -- 变暗焦点窗口之外的窗口
--- require("plugins.indent-blankline")
-
--- require("plugins.coc")
--- require("lsp.cpp")

@@ -101,16 +101,50 @@ return require('packer').startup(function(use)
 
     use 'ethanholz/nvim-lastplace' -- auto return back to the last modified place
 
-    use 'rcarriga/nvim-notify' -- make the notify appear top
+    use 'rcarriga/nvim-notify'     -- make the notify appear top
 
-    use"Kicamon/im-switch.nvim" -- auto switch imputting method to en when exiting 'INSERT' mode
+    use "Kicamon/im-switch.nvim"   -- auto switch imputting method to en when exiting 'INSERT' mode
 
-    use 'zaldih/themery.nvim' -- use '<leader>cs' to switch theme rapidly and conveniently BUT it's effort is temporary
+    use 'zaldih/themery.nvim'      -- use '<leader>cs' to switch theme rapidly and conveniently BUT it's effort is temporary
+
+    -- use 'yamatsum/nvim-nonicons'
+
+    -- if use nvim-web-devicons
+    use {
+        'yamatsum/nvim-nonicons',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
+    }
+
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+    -- test test tes
+
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- folding parenttheses
+
+    use { 'rainbowhxch/accelerated-jk.nvim' } -- speed up curosr's moving speed
+
+    use { "ray-x/lsp_signature.nvim", } -- show function signature whey you type
 
     -- ------------------ debug adapator -----------------------
     -- use "ravenxrz/DAPInsatll.nvim" -- help us install several debuggers
     use 'mfussenegger/nvim-dap'
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use "theHamsta/nvim-dap-virtual-text"
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

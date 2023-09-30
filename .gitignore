@@ -1,3 +1,4 @@
-plugin/
+/plugin
+init.lua
 
 #~/.local/share/nvim/site/pack/packer/start
