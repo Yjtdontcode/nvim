@@ -5,6 +5,7 @@ local keymap = vim.keymap
 -- keymap.set("i", "kj", "<ESC>")
 keymap.set("i", "<C-h>", "<ESC>I")
 keymap.set("i", "<C-l>", "<ESC>A")
+keymap.set("i", "<C-e>", "<ESC><C-e>a")
 
 -- ---------- 视觉模式 ---------- ---
 -- 单行或多行移动
@@ -30,10 +31,10 @@ keymap.set("n", "wq", "<cmd>wq<CR>") -- 写入并退出文件
 keymap.set("n", "<leader>hh", "^")
 keymap.set("n", "<leader>ll", "$")
 -- 分屏选择
-keymap.set("n", "<M-h>", "<C-w>h")
-keymap.set("n", "<A-j>", "<C-w>j")
-keymap.set("n", "<A-k>", "<C-w>k")
-keymap.set("n", "<A-l>", "<C-w>l")
+keymap.set("n", "<leader>wh", "<C-w>h")
+keymap.set("n", "<leader>wj", "<C-w>j")
+keymap.set("n", "<leader>wk", "<C-w>k")
+keymap.set("n", "<leader>wl", "<C-w>l")
 -- 分屏调整
 keymap.set("n", "<A-,>", "<C-w>>")
 keymap.set("n", "<A-.>", "<C-w><")
@@ -41,8 +42,8 @@ keymap.set("n", "<A-- >", "<C-w>-")
 keymap.set("n", "<A-= >", "<C-w>+")
 -- build and run
 keymap.set("n", "<leader>bu", "<C-w>v<cmd>term g++ *.cpp<CR>")
-keymap.set("n", "<leader>R", "<cmd>w<CR> <C-w>s <cmd>term g++ *.cpp; ./a.out<CR>")
-keymap.set("n", "<leader>rr", "<cmd>w<CR> <C-w>v <cmd>term g++ *.cpp; ./a.out<CR>")
+keymap.set("n", "<leader>R", "<cmd>w<CR> <C-w>s <cmd>term gcc *.cpp; ./a.out<CR>")
+keymap.set("n", "<leader>rr", "<cmd>w<CR> <C-w>v <cmd>term gcc *.cpp; ./a.out<CR>")
 -- dashboard 
 keymap.set("n", "<leader>da", "<cmd>Dashboard<CR>")
 
@@ -89,3 +90,4 @@ keymap.set("n", "f", "<cmd>HopWord<CR>", {silent = true})
 -- ------------------ folding parentheses ---------------
 keymap.set("n", "<leader>fc", "<cmd>foldclose<CR>", {silent = true})
 keymap.set("n", "<leader>fo", "<cmd>foldopen<CR>", {silent = true})
+
